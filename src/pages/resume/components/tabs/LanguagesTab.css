@@ -1,0 +1,57 @@
+.resume__languages-section {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.resume__language-item {
+  margin-bottom: 1.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  background-color: #fafafa;
+}
+
+.resume__language-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.resume__language-header h4 {
+  margin: 0;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.resume__language-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.resume__language-content .MuiTextField-root {
+  background-color: #fff;
+}
+
+.resume__language-item .MuiInputBase-input {
+  padding: 8px 12px;
+}
+
+@media (max-width: 768px) {
+  .resume__languages-section {
+    padding: 1rem;
+  }
+
+  .resume__language-item {
+    padding: 0.8rem;
+  }
+
+  .resume__language-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}

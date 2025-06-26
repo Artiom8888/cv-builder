@@ -1,0 +1,67 @@
+.resume__education-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.resume__education-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.resume__education-header h4 {
+  margin: 0;
+  color: #228be6;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.resume__education-item .MuiTextField-root {
+  font-size: 15px;
+  margin-bottom: 16px;
+}
+
+.resume__education-item {
+  background: white;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.resume__education-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Animation for form fields */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.resume__education-item {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.resume__education-start-date .MuiInputBase-input,
+.resume__education-end-date .MuiInputBase-input {
+  padding: 8px 12px;
+}
+
+@media (max-width: 768px) {
+  .resume__education-header h4 {
+    font-size: 16px;
+  }
+}

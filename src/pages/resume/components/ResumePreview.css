@@ -1,0 +1,55 @@
+/* src/pages/resume/components/ResumePreview.css */
+
+.preview-container {
+  padding: 12px; /* Adjust based on your theme spacing */
+  background-color: white;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  gap: 12px; /* Adjust based on your theme spacing */
+  margin-bottom: 12px; /* Adjust based on your theme spacing */
+  padding-bottom: 8px; /* Adjust based on your theme spacing */
+  border-bottom: 1px solid #e0e0e0; /* Adjust based on your theme palette */
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px; /* Adjust based on your theme spacing */
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 4px; /* Adjust based on your theme spacing */
+  color: #757575; /* Adjust based on your theme palette */
+  font-size: 0.7rem;
+}
+
+.section {
+  margin-bottom: 12px; /* Adjust based on your theme spacing */
+}
+
+.section-title {
+  color: #1976d2; /* Adjust based on your theme palette */
+  margin-bottom: 4px; /* Adjust based on your theme spacing */
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px; 
+  margin-top: 2px; 
+}
+
+.tech-stack-section {
+  margin-bottom: 20px;
+}
