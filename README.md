@@ -14,6 +14,23 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
+### `npm run server`
+
+Starts the Express API (`src/backend/server.js`).\
+The API is available at [http://localhost:5001](http://localhost:5001) when `PORT=5001` is set in the project-root `.env` (otherwise it falls back to port 5000).
+
+It loads environment variables from the **project root** `.env`, connects to MongoDB using `MONGO_URI`, and serves resume routes under `/api` (create, update, list, and PDF/DOCX download). CORS is configured for the React app at [http://localhost:3000](http://localhost:3000).
+
+Create a `.env` file in the project root with at least:
+
+```
+MONGO_URI=your_mongodb_connection_string
+PORT=5001
+REACT_APP_API_URL=http://localhost:5001/api
+```
+
+Run `npm start` in a second terminal so the frontend can talk to the API. Restart `npm start` after changing any `REACT_APP_*` variable.
+
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { 
   Box, 
@@ -10,10 +10,15 @@ import {
   CardMedia, 
   Button,
   CardActions,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  IconButton,
   useTheme
 } from '@mui/material';
 import PreviewIcon from '@mui/icons-material/Preview';
 import CreateIcon from '@mui/icons-material/Create';
+import CloseIcon from '@mui/icons-material/Close';
 
 const templates = [
   {
@@ -42,9 +47,14 @@ const templates = [
 const Home = () => {
   const navigate = useNavigate();
   const theme = useTheme();
+  const [previewTemplate, setPreviewTemplate] = useState(null);
 
   const handleTemplateSelect = (templateId) => {
     navigate(`/resume/${templateId}`);
+  };
+
+  const handleClosePreview = () => {
+    setPreviewTemplate(null);
   };
 
   return (
@@ -97,6 +107,7 @@ const Home = () => {
                   variant="outlined"
                   fullWidth
                   sx={{ mr: 1 }}
+                  onClick={() => setPreviewTemplate(template)}
                 >
                   Preview
                 </Button>
@@ -113,6 +124,41 @@ const Home = () => {
           </Grid>
         ))}
       </Grid>
+
+      <Dialog
+        open={Boolean(previewTemplate)}
+        onClose={handleClosePreview}
+        maxWidth="md"
+        fullWidth
+        aria-labelledby="template-preview-title"
+      >
+        <DialogTitle id="template-preview-title" sx={{ pr: 6 }}>
+          {previewTemplate?.name}
+          <IconButton
+            aria-label="Close preview"
+            onClick={handleClosePreview}
+            sx={{ position: 'absolute', right: 8, top: 8 }}
+          >
+            <CloseIcon />
+          </IconButton>
+        </DialogTitle>
+        <DialogContent>
+          {previewTemplate && (
+            <Box
+              component="img"
+              src={previewTemplate.image}
+              alt={`${previewTemplate.name} template preview`}
+              sx={{
+                display: 'block',
+                width: '100%',
+                maxHeight: '80vh',
+                objectFit: 'contain',
+                borderRadius: 1,
+              }}
+            />
+          )}
+        </DialogContent>
+      </Dialog>
     </Container>
   );
 };
